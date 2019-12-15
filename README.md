@@ -15,17 +15,14 @@ Pour être plus spécifique, nous nous sommes limités à experimenter la sécur
 
 3. BLOCKCHAIN AVEC HYPERLEDGER FABRIC
 - Procédure de Téléchargement et installation sur :  https://hyperledger.github.io/composer/latest/tutorials/tutorials.html
-- Installer le Business Network
-   composer network install --card PeerAdmin@hlfv1 --archiveFile temperature-blockchain@0.0.2.bna
 
-- Demarrer le réseau
+- Installer le Business Network : composer network install --card PeerAdmin@hlfv1 --archiveFile temperature-blockchain@0.0.2.bna
+
+- Demarrer le réseau : 
    composer network start --networkName temperature-blockchain --networkVersion 0.0.2 --networkAdmin admin --networkAdminEnrollSecret adminpw --card PeerAdmin@hlfv1 --file networkadmin.card
 
-- importer la carte administrateur
-   composer card import --file networkadmin.card
+- importer la carte administrateur : composer card import --file networkadmin.card
 
--Test pour voir si la carte Réponds
-  composer network ping --card admin@temperature-blockchain
+- Test pour voir si la carte Réponds : composer network ping --card admin@temperature-blockchain
 
-- Demarrage du composer
-  composer-rest-server -c admin@temperature-blockchain -n never -u true -w true
+- Demarrage du composer : composer-rest-server -c admin@temperature-blockchain -n never -u true -w true
