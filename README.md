@@ -15,6 +15,7 @@ Pour être plus spécifique, nous nous sommes limités à experimenter la sécur
 
 3. BLOCKCHAIN AVEC HYPERLEDGER FABRIC
 - Procédure de Téléchargement et installation sur :  https://hyperledger.github.io/composer/latest/tutorials/tutorials.html
+- Acceder au dossier temperature-Blockchain
 
 - Installer le Business Network : composer network install --card PeerAdmin@hlfv1 --archiveFile temperature-blockchain@0.0.2.bna
 
@@ -29,6 +30,7 @@ Pour être plus spécifique, nous nous sommes limités à experimenter la sécur
 
 4. FRONT-END AVEC REACT JS
 - Procedure de Téléchargement et d'installation : https://fr.reactjs.org/docs/getting-started.html
+- acceder au dossier temperature-app
 - Installer le npm
 - npm init
 - nmp install
