@@ -26,3 +26,10 @@ Pour être plus spécifique, nous nous sommes limités à experimenter la sécur
 - Test pour voir si la carte Réponds : composer network ping --card admin@temperature-blockchain
 
 - Demarrage du composer : composer-rest-server -c admin@temperature-blockchain -n never -u true -w true
+
+4. FRONT-END AVEC REACT JS
+- Procedure de Téléchargement et d'installation : https://fr.reactjs.org/docs/getting-started.html
+- Installer le npm
+- npm init
+- nmp install
+- npm start pour demarrer la partie front-end
