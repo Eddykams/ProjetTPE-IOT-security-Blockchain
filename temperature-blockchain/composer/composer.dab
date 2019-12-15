@@ -1,0 +1,99 @@
+{
+  "Services": {
+    "ca.org1.example.com": {
+      "Args": [
+        "sh", 
+        "-c", 
+        "fabric-ca-server start --ca.certfile /etc/hyperledger/fabric-ca-server-config/ca.org1.example.com-cert.pem --ca.keyfile /etc/hyperledger/fabric-ca-server-config/19ab65abbb04807dad12e4c0a9aaa6649e70868e3abd0217a322d89e47e1a6ae_sk -b admin:adminpw -d"
+      ], 
+      "Env": [
+        "FABRIC_CA_SERVER_CA_NAME=ca.org1.example.com", 
+        "FABRIC_CA_HOME=/etc/hyperledger/fabric-ca-server"
+      ], 
+      "Image": "hyperledger/fabric-ca@sha256:39dbb1d5028f3e1cd0ad3aea2202b3bb8d3d8eab5661b1c89a29af3ed9d215ad", 
+      "Networks": [
+        "default"
+      ], 
+      "Ports": [
+        {
+          "Port": 7054, 
+          "Protocol": "tcp"
+        }
+      ]
+    }, 
+    "couchdb": {
+      "Env": [
+        "DB_URL=http://localhost:5984/member_db"
+      ], 
+      "Image": "hyperledger/fabric-couchdb@sha256:c65891b6c2374a06aff61dad8cd60e1f7a8dc2b72cc9f6f5c2f853f94509c1b1", 
+      "Networks": [
+        "default"
+      ], 
+      "Ports": [
+        {
+          "Port": 5984, 
+          "Protocol": "tcp"
+        }
+      ]
+    }, 
+    "orderer.example.com": {
+      "Args": [
+        "orderer"
+      ], 
+      "Env": [
+        "ORDERER_GENERAL_LOCALMSPID=OrdererMSP", 
+        "ORDERER_GENERAL_LOCALMSPDIR=/etc/hyperledger/msp/orderer/msp", 
+        "ORDERER_GENERAL_LOGLEVEL=debug", 
+        "ORDERER_GENERAL_LISTENADDRESS=0.0.0.0", 
+        "ORDERER_GENERAL_GENESISMETHOD=file", 
+        "ORDERER_GENERAL_GENESISFILE=/etc/hyperledger/configtx/composer-genesis.block"
+      ], 
+      "Image": "hyperledger/fabric-orderer@sha256:e5901f4dccc72a2f1b15e474cd4b097ff58ccc16c6f509b6a56e9b86b7873559", 
+      "Networks": [
+        "default"
+      ], 
+      "Ports": [
+        {
+          "Port": 7050, 
+          "Protocol": "tcp"
+        }
+      ], 
+      "WorkingDir": "/opt/gopath/src/github.com/hyperledger/fabric"
+    }, 
+    "peer0.org1.example.com": {
+      "Args": [
+        "peer", 
+        "node", 
+        "start"
+      ], 
+      "Env": [
+        "CORE_PEER_ID=peer0.org1.example.com", 
+        "CORE_PEER_LOCALMSPID=Org1MSP", 
+        "CORE_CHAINCODE_LOGGING_LEVEL=DEBUG", 
+        "CORE_LEDGER_STATE_STATEDATABASE=CouchDB", 
+        "CORE_PEER_MSPCONFIGPATH=/etc/hyperledger/peer/msp", 
+        "CORE_VM_DOCKER_HOSTCONFIG_NETWORKMODE=composer_default", 
+        "CORE_LOGGING_LEVEL=debug", 
+        "CORE_PEER_ADDRESS=peer0.org1.example.com:7051", 
+        "CORE_VM_ENDPOINT=unix:///host/var/run/docker.sock", 
+        "CORE_LEDGER_STATE_COUCHDBCONFIG_COUCHDBADDRESS=couchdb:5984"
+      ], 
+      "Image": "hyperledger/fabric-peer@sha256:27db96465aedb12fb027c8c1bc67afd02aae5ecfd3c619f7d70a9c111f7399e5", 
+      "Networks": [
+        "default"
+      ], 
+      "Ports": [
+        {
+          "Port": 7051, 
+          "Protocol": "tcp"
+        }, 
+        {
+          "Port": 7053, 
+          "Protocol": "tcp"
+        }
+      ], 
+      "WorkingDir": "/opt/gopath/src/github.com/hyperledger/fabric"
+    }
+  }, 
+  "Version": "0.1"
+}

@@ -1,0 +1,5 @@
+query selectAllAssets{
+  description: "Select all assets"
+  statement:
+    SELECT org.tempeture.blockchain.TempetureAsset
+}
