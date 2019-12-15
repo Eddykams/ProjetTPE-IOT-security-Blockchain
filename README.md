@@ -7,7 +7,7 @@ Pour être plus spécifique, nous nous sommes limités à experimenter la sécur
 - Pour cette partie, nous avons utilisé une base des données Mysql qui nous aidera à stocker les informations qui provienent de nos différents capteurs, sous Ubuntu avec Xampp server, procedure de téléchargement et  d'installation sur https://www.apachefriends.org/fr/download.html
 - Importer et executer script-database.sql
 
-2. FRONT END LARAVEL
+2. BACK-END LARAVEL
 - Téléchargement et Installer de Laravel Framework en suivant la procedure suivante : https://laravel.com/docs/4.2
 - Ouvrir la partie Laravel Back-end avec un editeur comme Vscode studio.
 - Executer php artisan serve pour demarrer laravel sur le port 8000.
