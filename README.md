@@ -11,7 +11,7 @@ Pour être plus spécifique, nous nous sommes limités à experimenter la sécur
 - Téléchargement et Installer de Laravel Framework en suivant la procedure suivante : https://laravel.com/docs/4.2
 - Ouvrir la partie Laravel Back-end avec un editeur comme Vscode studio.
 - Executer php artisan serve pour demarrer laravel sur le port 8000.
-- POur check du demarrage :  http://127.0.0.1:8000
+- Pour check du demarrage :  http://127.0.0.1:8000
 
 3. BLOCKCHAIN AVEC HYPERLEDGER FABRIC
 - Procédure de Téléchargement et installation sur :  https://hyperledger.github.io/composer/latest/tutorials/tutorials.html
